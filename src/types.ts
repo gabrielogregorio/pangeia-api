@@ -10,26 +10,16 @@ export type Context = {
 };
 
 type pageDocsMd = {
-  name?: string;
-  title?: string;
   markdown?: string;
 };
 
-type pageDocsTestsEndpoints = {
-  name?: string;
-  description?: string;
-  path?: string;
-  method?: string;
-  payload?: string;
-  headers?: string;
-  resposta?: string;
-};
-
-export type PageType = pageDocsMd | pageDocsTestsEndpoints;
+export type contentType = pageDocsMd;
 
 export type SchemaType = {
-  title?: string;
-  name?: string;
-  children?: SchemaType[];
-  page?: PageType[];
+  dynamicId: string;
+  tags?: string[];
+  errors?: string[];
+  title: string;
+  originName: string;
+  content: contentType[];
 };

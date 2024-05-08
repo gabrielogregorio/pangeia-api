@@ -4,7 +4,6 @@ import { useCors } from './middlewares/useCors';
 import { useHandleErrors } from './middlewares/useHandleErrors';
 import axios from 'axios';
 import { SchemaType } from './types';
-import { generateSchema, inputSchemasType } from './handlers/generateSchema';
 import { LogService } from './services/log';
 
 const app = express();
@@ -25,12 +24,17 @@ const TIME_TO_REFRESH_DOCS_IN_MS = 1000;
 // fixme and create report errros
 setInterval(async () => {
   try {
-    const url = process.env.BASE_UR_LISTENERS?.toString() + '/schemas';
+    const url = process.env.BASE_UR_LISTENERS?.toString() + '/schema';
 
     const result = await axios.get(url);
-    const response = result.data as inputSchemasType[];
+    const response = result.data as SchemaType[];
 
-    lastSchema = generateSchema(response);
+    lastSchema = response.map((item) => {
+      return {
+        ...item,
+        dynamicId: Math.random().toString()
+      };
+    });
     status.generateSchema = true;
 
     LogService.info('dados obtidos');

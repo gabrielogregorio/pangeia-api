@@ -1,7 +1,7 @@
 import cors from 'cors';
 
 const corsOptions = {
-  origin: ['*'],
+  origin: '*',
   optionsSuccessStatus: 200
 };
 
