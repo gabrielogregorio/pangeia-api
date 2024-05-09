@@ -32,6 +32,12 @@ setInterval(async () => {
     lastSchema = response.map((item) => {
       return {
         ...item,
+        content: item.content.map((item) => {
+          return {
+            ...item,
+            dynamicId: Math.random().toString()
+          };
+        }),
         dynamicId: Math.random().toString()
       };
     });
