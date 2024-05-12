@@ -6,6 +6,8 @@ export type Context = {
 
 type pageDocsMd = {
   markdown?: string;
+  type: 'md' | 'tag';
+  subType: 'dev' | 'normal';
   dynamicId: string;
 };
 
