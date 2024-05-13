@@ -3,7 +3,7 @@ import express from 'express';
 import { useCors } from './middlewares/useCors';
 import { useHandleErrors } from './middlewares/useHandleErrors';
 import axios from 'axios';
-import { SchemaType } from './types';
+import { SchemaType, hierarchyType } from './types';
 import { LogService } from './services/log';
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(useCors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-let lastSchema: SchemaType[] = [];
+let lastSchema: { schema: SchemaType[]; hierarchy: hierarchyType[] } = { schema: [], hierarchy: [] };
 let status = {
   generateSchema: false,
   error: false
@@ -27,9 +27,9 @@ setInterval(async () => {
     const url = process.env.BASE_UR_LISTENERS?.toString() + '/schema';
 
     const result = await axios.get(url);
-    const response = result.data as SchemaType[];
+    const response = result.data as { schema: SchemaType[]; hierarchy: hierarchyType[] };
 
-    lastSchema = response.map((item) => {
+    const schemaFixed = response.schema.map((item) => {
       return {
         ...item,
         content: item.content.map((item) => {
@@ -41,6 +41,11 @@ setInterval(async () => {
         dynamicId: Math.random().toString()
       };
     });
+
+    lastSchema = {
+      schema: schemaFixed,
+      hierarchy: response.hierarchy
+    };
     status.generateSchema = true;
 
     LogService.info('dados obtidos');
