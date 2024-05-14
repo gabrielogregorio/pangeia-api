@@ -5,6 +5,7 @@ import { useHandleErrors } from './middlewares/useHandleErrors';
 import axios from 'axios';
 import { SchemaType, hierarchyType } from './types';
 import { LogService } from './services/log';
+import { generateId } from './middlewares/generateId';
 
 const app = express();
 app.disable('x-powered-by');
@@ -38,7 +39,7 @@ setInterval(async () => {
             dynamicId: Math.random().toString()
           };
         }),
-        dynamicId: Math.random().toString()
+        id: generateId(item).value
       };
     });
 

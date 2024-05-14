@@ -13,11 +13,20 @@ type pageDocsMd = {
 
 export type contentType = pageDocsMd;
 
+type codeWithoutLanguageType = {
+  type: 'code-without-language';
+  file: string;
+  code: string[];
+};
+
+type warningType = codeWithoutLanguageType;
+
 export type SchemaType = {
-  dynamicId: string;
+  id: string;
   tags?: string[];
   handlerName: string;
   errors?: string[];
+  warning?: warningType[];
   title: string;
   originName: string;
   content: contentType[];
