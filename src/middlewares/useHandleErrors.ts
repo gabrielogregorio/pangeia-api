@@ -7,7 +7,7 @@ import { CustomError } from '../error';
 export const useHandleErrors = (error: Error, req: Request, res: Response, next: NextFunction) => {
   if (error instanceof CustomError) {
     LogService.error(error.message);
-    res.status(500).json({ message: 'Internal Error' });
+    res.status(error.code).json({ message: error.message });
     return;
   }
 

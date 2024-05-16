@@ -1,0 +1,32 @@
+
+### create comments
+POST http://localhost:3333/comments HTTP/1.1
+content-type: application/json
+
+{
+  "postId":"21",
+  "message": "example"
+}
+
+#### get comments
+
+GET http://localhost:3333/comments HTTP/1.1
+
+#### get comments by post id
+
+GET http://localhost:3333/comments/posts/23 HTTP/1.1
+
+
+#### edit comment
+
+PUT http://localhost:3333/comments/6643a3575cff7c43ac3db95c  HTTP/1.1
+content-type: application/json
+
+{
+  "message": "example2 2",
+    "postId":"21"
+}
+
+#### delete comment
+
+DELETE http://localhost:3333/comments/6643a3575cff7c43ac3db95c HTTP/1.1

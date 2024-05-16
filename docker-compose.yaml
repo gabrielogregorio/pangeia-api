@@ -1,14 +1,7 @@
-version: '3'
-
 services:
   yggdrasil:
     container_name: yggdrasil
     env_file: .env
-    deploy:
-      resources:
-        limits:
-          memory: 2G
-          cpus: '2.0'
     build:
       context: ./
       dockerfile: ./Dockerfile
@@ -16,10 +9,30 @@ services:
       - '3333:3333'
     volumes:
       - ./:/usr/src/app/
+    depends_on:
+      - yggdrasil-db
+    networks:
+      - bifrost
+      - main
+
+  yggdrasil-db:
+    container_name: yggdrasil-db
+    env_file: .env
+    image: mongo:latest
+    build:
+      context: ./
+      dockerfile: ./database/Dockerfile
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
     networks:
       - bifrost
 
-# docker network create --driver bridge bifrost
 networks:
+  main:
   bifrost:
     external: true
+
+volumes:
+  mongo_data:

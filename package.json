@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "yggdrasil",
   "main": "index.js",
+  "engines": {
+    "yarn": "4.2.x",
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "jest": "jest"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +25,7 @@
     "@types/express": "^4.17.21",
     "@types/jest": "^28.1.8",
     "@types/node": "^18.7.13",
+    "@types/supertest": "^6.0.2",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "babel-plugin-module-resolver": "^5.0.0",
@@ -39,6 +44,7 @@
     "jest": "^29.0.1",
     "lint-staged": "^13.0.4",
     "prettier": "^2.6.2",
+    "supertest": "^7.0.0",
     "tree-sitter-typescript": "^0.20.5",
     "ts-jest": "^29.0.1",
     "ts-node": "^10.9.2",
@@ -54,7 +60,10 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-async-errors": "^3.1.1",
+    "joi": "^17.13.1",
+    "mongoose": "^8.1.2",
     "tree-sitter": "^0.21.1",
     "zod": "^3.23.4"
-  }
+  },
+  "packageManager": "yarn@4.2.2"
 }
