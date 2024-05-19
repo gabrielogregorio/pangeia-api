@@ -17,16 +17,16 @@ if (RUN_COLLECTOR) {
       const result = await axios.get(url);
       const response = result.data as { schema: SchemaType[]; hierarchy: hierarchyType[] };
 
-      const schemaFixed = response.schema.map((item) => {
+      const schemaFixed = response.schema.map((schema) => {
         return {
-          ...item,
-          content: item.content.map((item) => {
+          ...schema,
+          content: schema.blocks.map((block) => {
             return {
-              ...item,
+              ...block,
               dynamicId: Math.random().toString()
             };
           }),
-          id: generateId(item).value
+          id: generateId(schema).value
         };
       });
 

@@ -32,7 +32,7 @@ services:
 networks:
   main:
   bifrost:
-    external: true
+    external: false # externa true, docker d'nt create network
 
 volumes:
   mongo_data:

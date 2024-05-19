@@ -3480,9 +3480,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001587":
-  version: 1.0.30001618
-  resolution: "caniuse-lite@npm:1.0.30001618"
-  checksum: 10c0/2e33e5e854fb6365566e2ff5ba866c877cd08ca278a2c06b9bc3346a884fc1336a0674c2a0003e7ee7a1a64e90f167ec4ad08ea14d12da5926017c92c99f82a5
+  version: 1.0.30001620
+  resolution: "caniuse-lite@npm:1.0.30001620"
+  checksum: 10c0/3783117143fbdc98c1b91a579d0f2a7bcee7008f322ba7a2bf56a6c3d105400772c7ed8026840b4ea909ec7bf254bcc36532f2ce1b1a1240b00d0335da39b7ec
   languageName: node
   linkType: hard
 
@@ -4342,9 +4342,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.668":
-  version: 1.4.767
-  resolution: "electron-to-chromium@npm:1.4.767"
-  checksum: 10c0/b1d217091a7bc1a24560c8de6703d18bcf0e952bbf12a3f1c470b5306d5446b2493be5edb1c6b8e43ff3c1feadde8d5a3e1a50b0acd542bae2fc260402fef79b
+  version: 1.4.772
+  resolution: "electron-to-chromium@npm:1.4.772"
+  checksum: 10c0/79ea8f4d41b64e092677e801fd88affe0089e4e76dbbecf78fe2831a66d4b4ef6d0da6ad59be8079eb7b7f03c72d1667e81d13a803e343b8bd4ade3e3f1f7b49
   languageName: node
   linkType: hard
 
@@ -7760,8 +7760,8 @@ __metadata:
   linkType: hard
 
 "mongoose@npm:^8.1.2":
-  version: 8.3.4
-  resolution: "mongoose@npm:8.3.4"
+  version: 8.3.5
+  resolution: "mongoose@npm:8.3.5"
   dependencies:
     bson: "npm:^6.5.0"
     kareem: "npm:2.6.3"
@@ -7770,7 +7770,7 @@ __metadata:
     mquery: "npm:5.0.0"
     ms: "npm:2.1.3"
     sift: "npm:17.1.3"
-  checksum: 10c0/e1aec328dcf358090a999cd16b5e96f2e8ec20e4c7199e36ee2999e06eff84cb9a359edad4333ae29b5b960bc21a482516bd5f7e506eff8450ec3786ef3cb4fe
+  checksum: 10c0/3b6eee352410ab4e5bda59ad14febc75469d44a38b4b4fb35689171e8f267ea1e08d5cb4c5e8c7d74c145bb77f6bcd3353bf37418340895e45e3a4cadcb1a297
   languageName: node
   linkType: hard
 
