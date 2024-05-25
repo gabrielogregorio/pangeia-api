@@ -12,7 +12,7 @@ export const generateId = (input: SchemaType) => {
     };
   }
 
-  const bodyGenerate = input.content.map((item) => item.markdown).join('.');
+  const bodyGenerate = input.blocks.map((item) => ('markdown' in item ? item.markdown || '' : '')).join('.');
   if (!bodyGenerate && !input.title) {
     const id = crypto.createHash('md5').update(Math.random().toString()).digest('hex');
 

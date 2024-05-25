@@ -19,10 +19,10 @@ stop:
 	@docker compose -f ./docker-compose.yaml stop
 
 bash:
-	@docker exec -it yggdrasil /bin/bash
+	@docker exec -it pangeia /bin/bash
 
 logs:
 	@docker compose -f ./docker-compose.yaml logs -f
 
 logs-api:
-	@docker compose -f ./docker-compose.yaml logs -f yggdrasil
+	@docker compose -f ./docker-compose.yaml logs -f pangeia

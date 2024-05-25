@@ -1,5 +1,3 @@
-// deve dar para testar localmente integrações
-
 export type Context = {
   file: string;
 };
@@ -11,17 +9,26 @@ type pageDocsMd = {
   subType: 'dev' | 'normal';
 };
 
-export type handlerRequestType = {
-  type: 'request';
+export type swaggerRequestType = {
+  type: 'openApi3';
+  dynamicId: string;
+  summary: string;
+  description: string;
   method: string;
-  headers: {
-    [key: string]: string;
-  };
-  payload: string;
   url: string;
+  sceneries: {
+    summary: string;
+    description: string;
+    params: { [key: string]: string };
+    payload: unknown;
+    headers: {
+      [key: string]: string;
+    };
+    response: { status: number; example: unknown };
+  }[];
 };
 
-export type blocksType = pageDocsMd | handlerRequestType;
+export type blocksType = pageDocsMd | swaggerRequestType;
 
 export type requestJsonWithoutHeader = {
   type: 'request-json-without-header';
@@ -29,7 +36,7 @@ export type requestJsonWithoutHeader = {
   code: string[];
 };
 
-type codeWithoutLanguageType = {
+export type codeWithoutLanguageType = {
   type: 'code-without-language';
   file: string;
   code: string[];

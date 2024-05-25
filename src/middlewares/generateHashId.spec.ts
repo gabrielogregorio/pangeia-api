@@ -11,7 +11,7 @@ describe('', () => {
       warning: [],
       title: 'example title id',
       originName: 'origina name',
-      content: [
+      blocks: [
         {
           dynamicId: '',
           subType: 'dev',
@@ -26,7 +26,7 @@ describe('', () => {
     expect(result).toEqual({ value: '23ee44b17e0e122092381f10a83777ca', origin: 'tagsAndTitle' });
   });
 
-  it('[title and content is empty] should generate id by dynamic id', () => {
+  it('[title and blocks is empty] should generate id by dynamic id', () => {
     const payload: SchemaType = {
       id: '',
       tags: ['tag1', 'tag2'],
@@ -35,7 +35,7 @@ describe('', () => {
       warning: [],
       title: '',
       originName: 'origina name',
-      content: []
+      blocks: []
     };
 
     const result = generateId(payload);
@@ -43,7 +43,7 @@ describe('', () => {
     expect(result).toEqual({ value: expect.anything(), origin: 'dynamicId' });
   });
 
-  it('[title is empty] should generate id by tags, content, origin name and handler name', () => {
+  it('[title is empty] should generate id by tags, blocks, origin name and handler name', () => {
     const payload: SchemaType = {
       id: '',
       tags: ['tag1', 'tag2'],
@@ -52,7 +52,7 @@ describe('', () => {
       warning: [],
       title: '',
       originName: 'origina name',
-      content: [
+      blocks: [
         {
           dynamicId: '',
           subType: 'dev',
@@ -67,7 +67,7 @@ describe('', () => {
     expect(result).toEqual({ origin: 'allAndBody', value: '11acdbdd4b52b57d312e2936b4c669ed' });
   });
 
-  it('[title is empty] should generate id by tags, content, origin name and handler name', () => {
+  it('[title is empty] should generate id by tags, blocks, origin name and handler name', () => {
     const payload: SchemaType = {
       id: '',
       tags: ['tag1', 'tag2'],
@@ -76,7 +76,7 @@ describe('', () => {
       warning: [],
       title: '',
       originName: 'origina name',
-      content: [
+      blocks: [
         {
           dynamicId: '',
           subType: 'dev',

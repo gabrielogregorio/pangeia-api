@@ -1,6 +1,6 @@
 services:
-  yggdrasil:
-    container_name: yggdrasil
+  pangeia:
+    container_name: pangeia
     env_file: .env
     build:
       context: ./
@@ -10,13 +10,13 @@ services:
     volumes:
       - ./:/usr/src/app/
     depends_on:
-      - yggdrasil-db
+      - pangeia-db
     networks:
       - bifrost
       - main
 
-  yggdrasil-db:
-    container_name: yggdrasil-db
+  pangeia-db:
+    container_name: pangeia-db
     env_file: .env
     image: mongo:latest
     build:

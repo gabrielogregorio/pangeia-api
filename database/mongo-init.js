@@ -1,1 +1,1 @@
-db = db.getSiblingDB('yggdrasil');
+db = db.getSiblingDB('pangeia');
