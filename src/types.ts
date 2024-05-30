@@ -30,15 +30,17 @@ export type swaggerRequestType = {
 
 export type blocksType = pageDocsMd | swaggerRequestType;
 
-export type requestJsonWithoutHeader = {
-  type: 'request-json-without-header';
-  file: string;
-  code: string[];
-};
-
 export type codeWithoutLanguageType = {
   type: 'code-without-language';
   file: string;
+  message: string;
+  code: string[];
+};
+
+export type requestJsonWithoutHeader = {
+  type: 'request-json-without-header';
+  file: string;
+  message: string;
   code: string[];
 };
 

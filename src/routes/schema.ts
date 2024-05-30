@@ -48,3 +48,13 @@ if (RUN_COLLECTOR) {
 export const schemaRouter = express.Router();
 
 schemaRouter.get('/', (req, res) => res.json(lastSchema));
+schemaRouter.get('/tags', (req, res) => {
+  const tags: string[][] = [];
+  lastSchema.schema.forEach((item) => {
+    if (item.tags?.length) {
+      tags.push(item.tags);
+    }
+  });
+
+  res.json(tags);
+});
